@@ -1,0 +1,7 @@
+applications:
+- memory: 256M
+  instances: 1
+  name: FlaskCF
+  host: FlaskCF
+  disk_quota: 1024M
+  command: python FlaskCF.py
