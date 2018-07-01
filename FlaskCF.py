@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 import os
 
 app = Flask(__name__)
@@ -8,6 +9,16 @@ PORT = int(os.environ.get('PORT', 8080))
 @app.route('/')
 def hello_world():
     return 'Hello Cloud Foundry!'
+
+
+@app.route('/echo')
+def echo():
+    return 'Echo!'
+
+
+@app.route('/pythonapi')
+def api():
+    return jsonify(type='REST', language='Python', version='0.0.1')
 
 
 if __name__ == '__main__':

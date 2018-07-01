@@ -1,4 +1,5 @@
 # don't include Pycharm project files
 .idea
+venv
 
 # That's All Folks !!
