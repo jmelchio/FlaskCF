@@ -1,3 +1,4 @@
+---
 applications:
 - memory: 64M
   instances: 1
