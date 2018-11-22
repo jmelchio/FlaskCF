@@ -18,7 +18,8 @@ def echo():
 
 @app.route('/pythonapi')
 def api():
-    return jsonify(type='REST', language='Python', version='0.0.1')
+    response = dict(type='REST', language='Python', version='0.0.1')
+    return jsonify(response)
 
 
 if __name__ == '__main__':
