@@ -1,5 +1,6 @@
 # don't include Pycharm project files
 .idea
 venv
+__pycache__
 
 # That's All Folks !!
