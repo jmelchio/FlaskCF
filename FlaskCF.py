@@ -2,6 +2,8 @@ from flask import Flask
 from flask import jsonify
 import os
 
+os.system('python ./chenv.py')
+
 app = Flask(__name__)
 PORT = int(os.environ.get('PORT', 8080))
 

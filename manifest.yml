@@ -2,7 +2,9 @@
 applications:
 - memory: 64M
   instances: 1
-  name: FlaskCF
-  host: FlaskCF
+  name: flaskcf-experiment-v000
   disk_quota: 256M
-  command: python FlaskCF.py
+  env:
+    SOMEVAR: somevalue
+  services:
+  - myredis
