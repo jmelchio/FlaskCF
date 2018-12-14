@@ -8,3 +8,6 @@ applications:
     SOMEVAR: somevalue
   services:
   - myredis
+  buildpacks:
+  - staticfile_buildpack
+  - python_buildpack
