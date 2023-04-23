@@ -1,17 +1,21 @@
 import os
 import json
 
-vcapservices = json.loads(os.environ['VCAP_SERVICES'])
+vcapservices = os.environ.get('VCAPSERVICES')
+if vcapservices is None:
+    print('Not running in CloudFoundry')
+else:
+    vcapservices = json.loads(vcapservices)
 
-print 'before password:' + vcapservices['p-redis'][0]['credentials']['password']
+    print('before password:' + vcapservices['p-redis'][0]['credentials']['password'])
 
-vcapservices['p-redis'][0]['credentials']['password'] = 'madeuppassword'
+    vcapservices['p-redis'][0]['credentials']['password'] = 'madeuppassword'
 
-print 'after password:' + vcapservices['p-redis'][0]['credentials']['password']
-print json.dumps(vcapservices)
+    print('after password:' + vcapservices['p-redis'][0]['credentials']['password'])
+    print(json.dumps(vcapservices))
 
-os.environ['ALT_SERVICES'] = json.dumps(vcapservices)
+    os.environ['ALT_SERVICES'] = json.dumps(vcapservices)
 
-print os.environ['ALT_SERVICES']
+    print(os.environ['ALT_SERVICES'])
 
 # That's All Folks !!
